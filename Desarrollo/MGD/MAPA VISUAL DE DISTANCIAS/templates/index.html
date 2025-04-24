@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Rutas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Calculadora de Rutas Minimas entre departamentos con el Algoritmo Dijkstra</h1>
+        <form action="/ruta" method="POST">
+            <label for="origen">Selecciona el departamento de origen:</label>
+            <select name="origen" id="origen">
+                {% for dep in departamentos %}
+                <option value="{{ dep }}">{{ dep }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="destino">Selecciona el departamento de destino:</label>
+            <select name="destino" id="destino">
+                {% for dep in departamentos %}
+                <option value="{{ dep }}">{{ dep }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit"><i class="fas fa-route"></i> Calcular Ruta</button>
+        </form>
+        <div class="footer">
+            <p>Proyecto de Matemática Discreta - Algoritmo de Dijkstra</p>
+        </div>
+    </div>
+</body>
+</html>
