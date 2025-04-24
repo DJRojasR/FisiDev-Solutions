@@ -1,0 +1,35 @@
+@startuml
+
+' Definición de las clases con sus atributos y métodos principales
+
+class AnalizadorComplejidad {
+    - complejidad: String
+    - funcion_tiempo: String
+    + analizar_codigo(codigo: String): String
+    - calcular_complejidad_no_recursiva(for_count: int, while_count: int, nested_depth: int): String
+    - obtener_funcion_tiempo_no_recursiva(for_count: int, while_count: int, nested_depth: int): String
+    + graficar_tiempo(funcion_tiempo: String)
+}
+
+class ComparadorAlgoritmos {
+    - analizadores: List<AnalizadorComplejidad>
+    + agregar_algoritmo(algoritmo: AnalizadorComplejidad)
+    + comparar(codigos: List<String>): List<String>
+}
+
+class InterfazGrafica {
+    - root: Tk
+    - main_frame: Frame
+    + elegir_opcion()
+    + analizar_algoritmo()
+    + mostrar_resultado()
+    + comparar_algoritmos()
+    + mostrar_comparacion()
+}
+
+' Relaciones entre las clases con multiplicidades
+InterfazGrafica ..> AnalizadorComplejidad : "1..*"
+ComparadorAlgoritmos *- AnalizadorComplejidad : "1..*"
+InterfazGrafica ..> ComparadorAlgoritmos : "1"
+
+@enduml

@@ -1,0 +1,131 @@
+@startuml
+class com.proyecto.Clases.Nodo {
+- Usuario user
+- Nodo next
++ Usuario getUser()
++ void setUser(Usuario)
++ Nodo getNext()
++ void setNext(Nodo)
+}
+
+
+class com.proyecto.Clases.Foro {
+- List<Tema> temas
++ boolean crearTema(String,String)
++ List<Tema> getTemas()
++ void aMensaje(int,String,String)
++ void responderMensaje(int,int,String,String)
++ void mostrarForo()
++ void guardarTemas()
++ boolean deleteTema(int,String)
++ boolean eliminarRespuesta(int,int,int,String)
+- Tema buscarTemaPorId(int)
++ void cargarTemas()
++ void buscarPorPalabraClave(String)
+- String resaltarPalabraClave(String,String)
++ boolean eliminarMensaje(int,int,String)
+}
+
+
+class com.proyecto.Clases.Tema {
+- String titulo
+- String autor
+- List<Mensaje> mensajes
+- LocalDateTime fechaHora
++ {static} int siguienteId
+- int id
++ {static} DateTimeFormatter formatter
++ String getFechaHora()
++ void setFechaHora(LocalDateTime)
++ String getTitulo()
++ void addMensaje(Mensaje)
++ int getId()
++ void setId(int)
++ List<Mensaje> getMensajes()
++ String getAutor()
++ void setAutor(String)
++ String toString()
+}
+
+
+class com.proyecto.Clases.Mensaje {
+- String autor
+- String contenido
+- List<Mensaje> respuestas
+- LocalDateTime fechaHora
++ {static} DateTimeFormatter formatter
++ String getFechaHora()
++ void setFechaHora(LocalDateTime)
++ String getAutor()
++ String getContenido()
++ void addRespuesta(Mensaje)
++ List<Mensaje> getRespuestas()
++ String toString()
+
+}
+
+
+abstract class com.proyecto.Clases.SuperUsuario {
+- String nombres
+- String usuario
+- String contra
+- boolean estado
++ String getNombres()
++ void setNombres(String)
++ String getUsuario()
++ void setUsuario(String)
++ String getContra()
++ void setContra(String)
++ boolean isEstado()
++ void setEstado(boolean)
++ String getEstadoComoTexto()
++ String toString()
+}
+
+
+class com.proyecto.Clases.Usuario {
+- int edad
+- Nodo cab
+- {static} int id
+- int idUnico
++ int getEdad()
++ void setEdad(int)
++ Nodo getCab()
++ void setCab(Nodo)
++ String toString()
++ void addUser(Usuario)
++ Usuario findUser(String)
++ int mostrarUsuariosEnLista()
++ void modificarAtributosUsuario(Usuario)
++ Usuario login(String,String)
+
+}
+
+
+class com.proyecto.Clases.Administrador {
+- double salario
+- boolean tipodmin
+- {static} String USUARIO
+- {static} String PASSWORD
++ double getSalario()
++ void setSalario(double)
++ boolean login(String,String)
++ Usuario activarUser(String,Nodo)
++ Usuario desactivarUser(String,Nodo)
++ Usuario EliminarUser(String,Nodo)
+}
+
+
+
+
+
+
+com.proyecto.Clases.SuperUsuario <|-- com.proyecto.Clases.Usuario
+com.proyecto.Clases.SuperUsuario <|-- com.proyecto.Clases.Administrador
+com.proyecto.Clases.Foro " 1 " --> " *   " com.proyecto.Clases.Tema : contiene
+com.proyecto.Clases.Tema " 1  " --> " * " com.proyecto.Clases.Mensaje : contiene
+com.proyecto.Clases.Mensaje "1" --> "*" com.proyecto.Clases.Mensaje : comentarios
+com.proyecto.Clases.Usuario " 1  " --> "1 " com.proyecto.Clases.Nodo : tiene
+com.proyecto.Clases.Foro "1 " --> " * " com.proyecto.Clases.Usuario : interactúa
+com.proyecto.Clases.Foro "1   " --> "1" com.proyecto.Clases.Administrador : gestiona
+@enduml
