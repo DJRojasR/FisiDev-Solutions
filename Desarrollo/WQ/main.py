@@ -219,7 +219,7 @@ with tab3:
         # Implementation would use appropriate document loaders
         # like PyPDFLoader, UnstructuredFileLoader, etc.
 
-# Add some analytics
+# algunas analiticas añadidas
 if webpage_url:
     with st.expander("Content Analysis Metrics"):
         col1, col2, col3 = st.columns(3)
