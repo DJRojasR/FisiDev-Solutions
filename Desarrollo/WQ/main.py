@@ -231,4 +231,4 @@ if webpage_url:
             st.metric("Embedding Model", "text-embedding-ada-002")
 
 
-#modificado m15/05/2025        
+#modificado 15/05/2025        
