@@ -42,7 +42,11 @@
     color: white; /* Color del texto al pasar por encima */
   }
   
-
+  /*la linea marroncita al raz de cada seccion de la barra de naveagcion*/
+  .navbar .active {
+    padding-bottom: 2 px;
+    border-bottom: 3px solid;
+  }
   /*para que el cursos sea una manito y no una flecha jejeje*/
   .navbar li {
     cursor: pointer;
