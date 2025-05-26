@@ -1,0 +1,63 @@
+/* Estilos para la barra de navegación */
+.navbar {
+    padding: 20px 0px; /* Espaciado arriba y abajo */
+    display: flex; /* Usa flexbox para alinear elementos */
+    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+    align-self: center; /* Centra la barra de navegación */
+  }
+  
+  .navbar .logo {
+    width: 100px; /* Ancho del logo */
+  }
+  
+  .navbar .navbar-menu {
+    display: flex; /* Usa flexbox para alinear elementos */
+    list-style: none; /* Quita los puntos de la lista */
+    gap: 20px; /* Espaciado entre elementos */
+    color: #2aa0cf; /* Color de los elementos */
+    font-size: 18px; /* Tamaño de la fuente */
+    justify-content: space-around; /* O usa space-between si prefieres */
+    align-items: center;
+  }
+  
+  .navbar-right {
+    display: flex; /* Usa flexbox para alinear elementos */
+    align-items: center; /* Alinea los elementos verticalmente */
+    gap: 40px; /* Espaciado entre elementos */
+  }
+  
+  .navbar button {
+    background: transparent;
+    padding: 10px 20px; /* Espaciado arriba y abajo */
+    border: 1px solid #ffffff; /* Borde del botón */
+    color: #2aa0cf; /* Color del texto */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 50px; /* Borde redondeado */
+    transition: all 0.5s; /* Transición al pasar por encima */
+  }
+  
+  .navbar button:hover {
+    background:  #2aa0cf; /* Color de fondo al pasar por encima */
+    color: white; /* Color del texto al pasar por encima */
+  }
+  
+
+  /*para que el cursos sea una manito y no una flecha jejeje*/
+  .navbar li {
+    cursor: pointer;
+  }
+  .navbar-search-icon {
+    position: relative;
+  }
+  
+  /*para laconfiguracion del icono de pedidos*/
+  .navbar-search-icon .dot {
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: rgb(32, 107, 220);
+    border-radius: 5px;
+    top: -8px;
+    right: -8px;
+  }
