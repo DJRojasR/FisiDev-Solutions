@@ -1,34 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Navbar from './components/Navbar/Navbar'
+import {Route, Routes} from 'react-router-dom'
+import Home from './pages/Home/Home'
+import Cart from './pages/Cart/Cart'
+import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
+import Footer from './components/Footer/Footer'
 
-function App() {
-  const [count, setCount] = useState(0)
+function App() {  
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <div className='app'>
+        <Navbar/>
+        <Routes>
+            {/* Creamos una ruta con el path / y el componente Home */}
+            <Route path="/" element={<Home />} />
+            {/* Creamos una ruta con el path /cart y el componente Cart */}
+            <Route path="/cart" element={<Cart/>} />
+            {/* Creamos una ruta con el path /order y el componente PlaceOrder */}
+            <Route path='/order' element={<PlaceOrder/>} />
+          </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <Footer/>
+    </div>
+    
   )
 }
 
