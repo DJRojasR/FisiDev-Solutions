@@ -45,3 +45,19 @@
   background-color: #73cef2; /* Color de fondo al pasar el cursor */
   color: rgb(255, 255, 255); /* Color de la fuente al pasar el cursor */
 }
+@media (max-width:1050px) {
+  .header-contents{
+    max-width: 45%;
+  }
+}
+@media (max-width:750px) {
+  .header-contents{
+    max-width: 65%;
+  }
+  .header-contents p{
+    display: none;
+  }
+  .header-contents button{
+    padding: 2vw 4vw;
+  }
+}
