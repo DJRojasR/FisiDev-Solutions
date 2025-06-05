@@ -35,6 +35,8 @@
 .food-item-price {
   font-size: 20px;/*tamaño de la fuente*/
   color: rgb(32, 107, 220);/*color del texto*/
+  font-weight: 500;
+  margin: 10px 0px;
 }
 .food-item-img-container {
   position: relative;/*posicion relativa*/
@@ -46,6 +48,20 @@
   right: 15px;/*posicion en la parte derecha*/
   cursor: pointer;  /*cursor*/
   border-radius: 50%;/*bordes redondeados*/
+}
+.food-item-counter{
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px;
+  border-radius: 50px;
+  background-color: white;
+}
+.food-item-counter img{
+  width: 30px;
 }
 
 .food-item {

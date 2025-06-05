@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "./Navbar.css"
 import { assets } from '../../assets/assets'
+import {Link} from 'react-router-dom'
 
 const Navbar = () => {
 
@@ -11,29 +12,29 @@ const Navbar = () => {
         <img src={assets.logo_juliaFish} alt='' className='logo'/>
         <ul className='navbar-menu'>
             
-            <li onClick={()=>setMenu("home")}
+            <Link to='/' onClick={()=>setMenu("home")}
             className={menu==="home"?"active":""}
             >
                 inicio
-            </li>
+            </Link>
 
-            <li onClick={()=>setMenu("menu")}
+            <a href='#explore-menu' onClick={()=>setMenu("menu")}
             className={menu==="menu"?"active":""}
             >
                 menu
-            </li>
+            </a>
 
-            <li onClick={()=>setMenu("mobile-app")}
+            <a href='#app-download' onClick={()=>setMenu("mobile-app")}
             className={menu==="mobile-app"?"active":""}
             >
                 app mobil
-            </li>
+            </a>
 
-            <li onClick={()=>setMenu("contact-us")}
+            <a href='#footer' onClick={()=>setMenu("contact-us")}
             className={menu==="contact-us"?"active":""}
             >
                 contactanos
-            </li>
+            </a>
 
         </ul>
 
