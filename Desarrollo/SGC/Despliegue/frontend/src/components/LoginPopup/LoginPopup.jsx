@@ -13,6 +13,7 @@ const LoginPopup = ({setShowLogin}) => {
                     <h2>{currState}</h2>
                     <img onClick={()=>setShowLogin(false)} 
                     src={assets.cross_icon} 
+                    /* Alguien Arregle el simbolo X que esta mal espaciado */
                     alt=""
                     />
                 </div>
