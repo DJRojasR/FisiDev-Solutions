@@ -1,10 +1,25 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./LoginPopup.css";
 import { assets } from "../../assets/assets";
 
 const LoginPopup = ({setShowLogin}) => {
 
     const[currState,setCurrState] = useState("Login")
+    const[data,setData] = useState({
+        name:"",
+        email:"",
+        password:""
+    })
+
+    const onChangeHandler = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setData(data=>({...data,[name]:value}))
+    }
+
+    useEffect(()=>{
+        console.log(data);
+    },[data])
 
     return (
         <div className='login-popup'>
@@ -18,9 +33,9 @@ const LoginPopup = ({setShowLogin}) => {
                     />
                 </div>
                 <div className="login-popup-inputs">
-                    {currState==="Login"?<></>:<input type="text" placeholder='Nombre' required/>}
-                    <input type="email" placeholder='email' required/>
-                    <input type="password" placeholder='contraseña' required/>
+                    {currState==="Login"?<></>:<input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='Nombre' required/>}
+                    <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='email' required/>
+                    <input name='password' onChange={onChangeHandler}  value={data.password} type="password" placeholder='contraseña' required/>
                 </div>
                 <button>{currState==="Sign Up"?"Create account":"Login"}</button>
                 <div className="login-popup-condition">
