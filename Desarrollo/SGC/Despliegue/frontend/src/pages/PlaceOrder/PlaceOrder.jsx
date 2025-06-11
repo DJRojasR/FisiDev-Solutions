@@ -1,7 +1,8 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import './PlaceOrder.css'
 import { StoreContext } from '../../context/StoreContext'
+import { useNavigate } from 'react-router-dom'
 
 const PlaceOrder = () => {
 
@@ -51,6 +52,17 @@ const PlaceOrder = () => {
       alert("Error al procesar el pago.")
     }
   }
+
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    if(!token){
+      navigate("/cart")
+    }
+    else if(getTotalCartAmount === 0){
+      navigate("/cart")
+    }
+  },[token])
 
 //formulario de compra
   return ( 
