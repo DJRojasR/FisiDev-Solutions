@@ -9,7 +9,9 @@ const Navbar = () => {
 
   return (
     <div className='navbar'>
-        <img src={assets.logo_juliaFish} alt='' className='logo'/>
+        <Link to='/'>
+            <img src={assets.logo_juliaFish} alt='' className='logo'/>
+        </Link>
         <ul className='navbar-menu'>
             
             <Link to='/' onClick={()=>setMenu("home")}
@@ -41,7 +43,9 @@ const Navbar = () => {
         <div className='navbar-right'>
             <img src={assets.search_icon} alt=''/>
             <div className='navbar-search-icon'>
+                <Link to='/cart'>
                 <img src={assets.basket_icon} alt='' /> 
+                </Link>
                 <div className='dot'></div>
             </div>
         </div>
