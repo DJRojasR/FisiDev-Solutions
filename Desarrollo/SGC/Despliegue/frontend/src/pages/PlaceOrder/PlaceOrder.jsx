@@ -1,30 +1,77 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
+import axios from 'axios'
 import './PlaceOrder.css'
 import { StoreContext } from '../../context/StoreContext'
 
 const PlaceOrder = () => {
 
-  const {getTotalCartAmount} = useContext(StoreContext)
+  const {getTotalCartAmount, token, food_list, cartItems, url} = useContext(StoreContext)
 
-  return (
-    <form className='place-order'>
+  const [data, setData] = useState({
+    nombre:"",
+    apellido:"",
+    email:"",
+    direccion:"",
+    ciudad:"",
+    distrito:"",
+    codigopostal:"",
+    pais:"",
+    celular:""
+  })
+
+  const onChangeHandler = (event) =>{ //La pagina registra los cambios en los campos del formulario y actualiza los datos cada que cambian
+    const name = event.target.name;
+    const value = event.target.value;
+    setData(data =>({...data, [name]:value}))
+  }
+
+  const placeOrder = async (event) => { //Al presionar el boton tipo submit se activa la función placeOrder
+    event.preventDefault();
+    let orderItems = [];
+    food_list.map((item)=>{ 
+      if(cartItems[item._id]>0){
+        let itemInfo = item;
+        itemInfo["quantity"] = cartItems[item._id];
+        orderItems.push(itemInfo)
+      }
+    })
+    let orderData = {
+      address: data,
+      items: orderItems,
+      amount: getTotalCartAmount()+2,
+    }
+    console.log("Order Data:", orderData); //// Para verificar que los datos están bien estructurados
+
+    let response = await axios.post(url+"/api/order/place", orderData, {headers:{token}}) 
+    if(response.data.success){
+      const {session_url} = response.data;
+      window.location.replace(session_url);
+    }
+    else{
+      alert("Error al procesar el pago.")
+    }
+  }
+
+//formulario de compra
+  return ( 
+    <form onSubmit={placeOrder} className='place-order'>
       <div className="place-order-left">
         <p className="title">Informacion de Delivery</p>
         <div className="multi-fields">
-          <input type="text" placeholder='Nombre'/>
-          <input type="text" placeholder='Apellido'/>
+          <input required name="nombre" onChange={onChangeHandler} type="text" value={data.nombre} placeholder='Nombre'/>
+          <input required name="apellido" onChange={onChangeHandler} type="text" value={data.apellido} placeholder='Apellido'/>
         </div>
-        <input type="email" placeholder='Email' />
-        <input type="text" placeholder='Direccion' />
+        <input required name="email" onChange={onChangeHandler} value={data.email} type="email"  placeholder='Email' />
+        <input required name="direccion" onChange={onChangeHandler} value={data.direccion} type="text" placeholder='Direccion' />
         <div className="multi-fields">
-          <input type="text" placeholder='Distrito'/>
-          <input type="text" placeholder='Ciudad'/>
+          <input required name="distrito" onChange={onChangeHandler} value={data.distrito} type="text" placeholder='Distrito'/>
+          <input required name="ciudad" onChange={onChangeHandler} value={data.ciudad} type="text" placeholder='Ciudad'/>
         </div>
         <div className="multi-fields">
-          <input type="text" placeholder='Codigo  Postal'/>
-          <input type="text" placeholder='Pais'/>
+          <input required name="codigo-postal" onChange={onChangeHandler} value={data.codigopostal} type="text" placeholder='Codigo  Postal'/>
+          <input required name="pais" onChange={onChangeHandler} value={data.pais} type="text" placeholder='Pais'/>
         </div>
-        <input type="texto" placeholder='Celular'/>
+        <input required name="celular" onChange={onChangeHandler} value={data.celular} type="texto" placeholder='Celular'/>
       </div>
       <div className='place-order-right'>
         <div className='cart-total'>
@@ -43,7 +90,7 @@ const PlaceOrder = () => {
               <b>S/{getTotalCartAmount()===0?0:getTotalCartAmount()+2}</b>
             </div>
           </div>
-          <button >Proceder al pago</button>
+          <button type="submit">Proceder al pago</button>
         </div>
       </div>
     </form>
