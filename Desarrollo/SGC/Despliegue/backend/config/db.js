@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 export const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb+srv://DJRojasR:gestion@juliafish.ufscbao.mongodb.net", {
+    await mongoose.connect("mongodb+srv://DJRojasR:gestion@juliafish.ufscbao.mongodb.net/restaurante", {
     });
     console.log("🔥 Conectado a MongoDB");
   } catch (error) {
