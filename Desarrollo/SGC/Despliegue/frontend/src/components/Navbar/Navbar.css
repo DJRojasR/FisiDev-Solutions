@@ -99,7 +99,7 @@
 .nav-profile-dropdown {
   position: absolute;
   right: 0;
-  top: 110%; /* Evita que el menú toque el perfil */
+  top: 90%; /* Evita que el menú toque el perfil */
   display: flex;
   flex-direction: column;
   background-color: #2aa0cf; /* Azul con ligera transparencia */
@@ -114,7 +114,7 @@
   /* Efecto inicial oculto */
   opacity: 0;/* Opacidad inicial */
   transform: translateY(-10px);/* Desplazamiento hacia arriba */
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;/* Transición suave */
+  transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;/* Transición suave */
   pointer-events: none; /* Evita que el menú sea clickeable cuando está oculto */
 }
 
@@ -135,7 +135,7 @@
   padding: 8px 10px;
   cursor: pointer;
   border-radius: 6px;
-  transition: background 0.3s ease-in-out;
+  transition: background 1s ease-in-out;
 }
 
 .nav-profile-dropdown li:hover {

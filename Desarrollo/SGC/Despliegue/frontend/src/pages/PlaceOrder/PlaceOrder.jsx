@@ -80,7 +80,7 @@ const PlaceOrder = () => {
           <input required name="ciudad" onChange={onChangeHandler} value={data.ciudad} type="text" placeholder='Ciudad'/>
         </div>
         <div className="multi-fields">
-          <input required name="codigo-postal" onChange={onChangeHandler} value={data.codigopostal} type="text" placeholder='Codigo  Postal'/>
+          <input required name="codigopostal" onChange={onChangeHandler} value={data.codigopostal} type="text" placeholder='Codigo  Postal'/>
           <input required name="pais" onChange={onChangeHandler} value={data.pais} type="text" placeholder='Pais'/>
         </div>
         <input required name="celular" onChange={onChangeHandler} value={data.celular} type="texto" placeholder='Celular'/>
