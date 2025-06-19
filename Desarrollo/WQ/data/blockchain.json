@@ -1,0 +1,79 @@
+[
+  {
+    "index": 0,
+    "data": "Inicio de registros",
+    "timestamp": "2025-06-16T19:54:52.712322",
+    "previous_hash": "0",
+    "hash": "865a84de78d0481a0c0527e05dcc72b7a650d0a27ec8a61abef6ade9a7d45f3b"
+  },
+  {
+    "index": 1,
+    "data": "Venta de S/150 a cliente 001",
+    "timestamp": "2025-06-16T19:59:52.713334",
+    "previous_hash": "865a84de78d0481a0c0527e05dcc72b7a650d0a27ec8a61abef6ade9a7d45f3b",
+    "hash": "9d0a12ddcd87b6d9a7f2e3f7c607920347df818cb8c248668de0ade77a25c6db"
+  },
+  {
+    "index": 2,
+    "data": "Venta de S/280 a cliente 002",
+    "timestamp": "2025-06-16T20:04:52.713334",
+    "previous_hash": "9d0a12ddcd87b6d9a7f2e3f7c607920347df818cb8c248668de0ade77a25c6db",
+    "hash": "58543c27ba3031e4f8adc638b22bab8e7778c7e787b1d440df7d7d65a91da500"
+  },
+  {
+    "index": 3,
+    "data": "Venta de S/320 a cliente 003",
+    "timestamp": "2025-06-16T20:09:52.713334",
+    "previous_hash": "58543c27ba3031e4f8adc638b22bab8e7778c7e787b1d440df7d7d65a91da500",
+    "hash": "56cc18b51678f96cfc525922acdd3ac667ccda1f5cc03ee3e5ca76205ec09dca"
+  },
+  {
+    "index": 4,
+    "data": "Venta de S/200 a cliente 004",
+    "timestamp": "2025-06-16T20:14:52.713334",
+    "previous_hash": "56cc18b51678f96cfc525922acdd3ac667ccda1f5cc03ee3e5ca76205ec09dca",
+    "hash": "38f456f60aa6538692f3cfc46d01d4d891033a0820dfb611bc5dd47214f37baa"
+  },
+  {
+    "index": 5,
+    "data": "Venta de S/175 a cliente 005",
+    "timestamp": "2025-06-16T20:19:52.713334",
+    "previous_hash": "38f456f60aa6538692f3cfc46d01d4d891033a0820dfb611bc5dd47214f37baa",
+    "hash": "c50bded8c7c8a3b3675e3abc0c91aca45cbc9bc39bf07446fff2c5e4ee196dc6"
+  },
+  {
+    "index": 6,
+    "data": "Venta de S/220 a cliente 006",
+    "timestamp": "2025-06-16T20:24:52.713334",
+    "previous_hash": "c50bded8c7c8a3b3675e3abc0c91aca45cbc9bc39bf07446fff2c5e4ee196dc6",
+    "hash": "5f7dd3c1474d58cff980cd52038dce2cb3f71884a6978a953e1d484dbd18d55b"
+  },
+  {
+    "index": 7,
+    "data": "Venta de S/310 a cliente 007",
+    "timestamp": "2025-06-16T20:29:52.713334",
+    "previous_hash": "5f7dd3c1474d58cff980cd52038dce2cb3f71884a6978a953e1d484dbd18d55b",
+    "hash": "09a594c79b0b859aff351bf70242cf240a76449ee6f6423af7ae297680f94663"
+  },
+  {
+    "index": 8,
+    "data": "Venta de S/145 a cliente 008",
+    "timestamp": "2025-06-16T20:34:52.713334",
+    "previous_hash": "09a594c79b0b859aff351bf70242cf240a76449ee6f6423af7ae297680f94663",
+    "hash": "20616241c48a70820bbb5353516e5786aad337cc617aeb1baff8a243128daed6"
+  },
+  {
+    "index": 9,
+    "data": "Venta de S/260 a cliente 009",
+    "timestamp": "2025-06-16T20:39:52.713334",
+    "previous_hash": "20616241c48a70820bbb5353516e5786aad337cc617aeb1baff8a243128daed6",
+    "hash": "c60bf8bd548721d333edff694d64c05f4d3def1278718372ed1967a071379742"
+  },
+  {
+    "index": 10,
+    "data": "Venta de S/400 a cliente 010",
+    "timestamp": "2025-06-16T20:44:52.713334",
+    "previous_hash": "c60bf8bd548721d333edff694d64c05f4d3def1278718372ed1967a071379742",
+    "hash": "893151665c49bc443b3ac42a65bf95fd4eb1976fc5f18fa5f9d943e76fcd206a"
+  }
+]
