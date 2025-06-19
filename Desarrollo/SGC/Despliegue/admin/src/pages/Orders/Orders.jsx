@@ -55,11 +55,11 @@ const Orders = ({url}) => {
                     </p>
                    
                     <p className='order-item-name'>
-                      {order.address.firstName+" "+ order.address.lastName} {/* traemos el nombre del usuario */}  
+                      {order.address.nombre+" "+ order.address.apellido} {/* traemos el nombre del usuario */}  
                     </p>
                     <div className='order-item-address'>
-                      <p>{order.address.street +","}</p>
-                      <p>{order.address.city+", "+ order.address.state+ ", "+ order.address.country+", "+order.address.zipcode}</p>
+                      <p>{order.address.direccion +","}</p>
+                      <p>{order.address.ciudad+", "+ order.address.distrito+ ", "+ order.address.pais+", "+order.address.codigopostal}</p>
                     </div>
                     <p className='order-item-phone'>
                         {order.address.phone} {/* traemos el telefono del usuario */}
