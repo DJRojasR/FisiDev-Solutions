@@ -186,10 +186,9 @@
 ---
 
 <p align="center">
-  <img src="assets/quote.png" alt="Frase personalizada" width="600" />
+  <strong><em>"Si puedes imaginarlo, puedes programarlo."</em></strong><br>
+  — Programación ATS
 </p>
-
-
 	
 
 
