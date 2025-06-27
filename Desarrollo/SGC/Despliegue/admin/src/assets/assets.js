@@ -5,6 +5,7 @@ import logo from "./logo.png";
 import order_icon from "./order_icon.png";
 import parcel_icon from "./parcel_icon.png";
 import upload_area from "./upload_area.png";
+import usuarios from "./usuarios.png"
 
 
 export const assets = {
@@ -14,7 +15,8 @@ logo,
  upload,
  order_icon,
  parcel_icon,
- upload_area
+ upload_area,
+ usuarios
 }
 
   
