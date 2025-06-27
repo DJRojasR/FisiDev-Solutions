@@ -3,7 +3,7 @@ import "./Users.css"
 import axios from "axios";
 import {toast} from "react-toastify"
 
-const Users = ({url}) => {
+const Users = ({ url }) => {
 
   const [users, setUser] = useState([]);
     const fetchList = async ()=>{
@@ -54,6 +54,4 @@ const Users = ({url}) => {
 
 
 };
-
-
 export default Users;
