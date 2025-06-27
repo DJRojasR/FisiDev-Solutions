@@ -6,8 +6,7 @@ import axios from "axios"
 
 const LoginPopup = ({setShowLogin}) => {
 
-    const {url,setToken} = useContext(StoreContext)
-
+    const { url, setToken, loadCartData } = useContext(StoreContext); // ✅ también loadCartData
     const[currState,setCurrState] = useState("Login")
     const[data,setData] = useState({
         name:"",
@@ -34,10 +33,12 @@ const LoginPopup = ({setShowLogin}) => {
         const response = await axios.post(newUrl,data)
 
         if (response.data.success) {
-            setToken(response.data.setToken)
-            localStorage.setItem("token",response.data.token)
-            setShowLogin(false)
-        }
+            setToken(response.data.token);
+            localStorage.setItem("token", response.data.token);
+            await loadCartData(response.data.token); // ✅ carga automáticamente el carrito
+            setShowLogin(false);
+            }
+
         else{
             alert(response.data.message)
         }

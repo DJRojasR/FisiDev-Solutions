@@ -25,6 +25,8 @@
     white-space: nowrap; /* Evita que los elementos se desborden */
     padding-left: 10px; /* Reduce espacio en los bordes */
     padding-right: 5px; /* Reduce espacio en los bordes */
+
+    padding-bottom: 50px;
   }
   
   .explore-menu-item {
@@ -48,7 +50,16 @@
   }
   
   .explore-menu-list::-webkit-scrollbar {
-    display: none; /* Oculta la barra de desplazamiento */
+    height: 10px;
+  }
+
+  .explore-menu-list::-webkit-scrollbar-thumb {
+    background-color: #b7bec2;
+    border-radius: 10px;
+  }
+
+  .explore-menu-list::-webkit-scrollbar-track {
+    background: transparent;
   }
   
   .explore-menu-item p {
