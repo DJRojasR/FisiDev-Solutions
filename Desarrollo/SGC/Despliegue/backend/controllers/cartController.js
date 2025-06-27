@@ -49,17 +49,15 @@ const removeFromCart = async (req, res) => {
 
 //fetch user cart data
 const getCart = async (req, res) => {
-
-	try{
-		let userData = await userModel.findById(req.body.userId);
-		let cartData=await userData.cartData;
-		res.json({success:true,cartData});
-
-	}catch(error){
-		console.log(error);
-		res.json({success:false,message:"Error"});
-	}
-
+  try {
+    let userData = await userModel.findById(req.body.userId);
+    let cartData = userData.cartData || {}; // por si cartData es undefined
+    res.json({ success: true, cartData });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: "Error interno del servidor" });
+  }
 };
+
 
 export { addToCart, removeFromCart, getCart };
