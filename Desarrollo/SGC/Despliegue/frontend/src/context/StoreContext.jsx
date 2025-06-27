@@ -10,6 +10,21 @@ const StoreContextProvider = (props) => {
   const [token,setToken] = useState("")
   const[food_list,setFoodList] = useState([])
 
+
+  /*Se agrega un usseEffect, esto nos asegura que cada nuevo producto tenga un valor inicial
+  en cartItems (incluso si agregaste categorías nuevas)*/
+  
+  useEffect(() => {
+  if (food_list.length > 0 && Object.keys(cartItems).length === 0) {
+    const initialCart = {};
+    food_list.forEach((item) => {
+      initialCart[item._id] = 0;
+    });
+    setCartItems(initialCart);
+  }
+  }, [food_list]);
+  
+
   const addToCart = async (itemId) => {
     if(!cartItems[itemId]) {
       setCartItems((prev)=>({...prev,[itemId]:1}))
