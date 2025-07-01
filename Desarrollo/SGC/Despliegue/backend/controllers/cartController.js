@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream
 import userModel from "../models/userModel.js";
 //add item to cart
+=======
+import userModel from "../models/userModels.js";
+//Agrega items al carrito
+>>>>>>> Stashed changes
 const addToCart = async (req, res) => {
   try {
     let userData = await userModel.findById(req.body.userId);
@@ -17,7 +22,7 @@ const addToCart = async (req, res) => {
   }
 };
 
-//remove items from user cart
+//Quita items del carrito
 const removeFromCart = async (req, res) => {
  try {
    let userData = await userModel.findById(req.body.userId);
