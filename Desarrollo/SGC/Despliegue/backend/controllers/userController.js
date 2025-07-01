@@ -1,4 +1,4 @@
-import userModel from "../models/userModel.js";
+import userModel from "../models/userModels.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import validator from "validator";
@@ -78,4 +78,29 @@ const registerUser = async (req, res) => {
 	
 };
 
-export { loginUser, registerUser };
+const userlist = async (req, res)=>{
+	try{
+		const users = await userModel.find({});
+		res.json({success: true, data:users });
+	}catch(error){
+		console.log(error);
+		res.json({ success: false, message: "error" });
+	}
+}
+
+const removeuser = async(req, res)=>{
+	try{
+		const user = await userModel.findById(req.body.id);
+		if (!user) {
+			return res.json({ success: false, message: "user not found" });
+		}
+		await userModel.findByIdAndDelete(req.body.id);
+		res.json({ success: true, message: "user remove" });
+	}catch(error){
+		 console.log(error);
+    	 res.json({success:false,message:"error"})
+	}
+
+};
+
+export { loginUser, registerUser,userlist, removeuser };

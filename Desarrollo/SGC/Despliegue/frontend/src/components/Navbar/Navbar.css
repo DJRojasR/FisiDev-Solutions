@@ -65,3 +65,115 @@
     top: -8px;
     right: -8px;
   }
+@media (max-width:1050px) {
+  .navbar .logo{
+    width: 140px;
+  }
+  .navbar-menu{
+    gap: 20px;
+    font-size: 17px;
+  }
+  .navbar-right{
+    gap: 30px;
+  }
+  .navbar-right img{
+    width: 22px;
+  }
+  .navbar-right button{
+    padding: 8px 25px;
+  }
+}
+
+.navbar-profile{
+  position: relative; /* Posición relativa */
+}
+
+.nav-profile {
+  position: relative; /* Permite que el dropdown se posicione de forma absoluta */
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Estilos del menú desplegable */
+.nav-profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: 90%; /* Evita que el menú toque el perfil */
+  display: flex;
+  flex-direction: column;
+  background-color: #2aa0cf; /* Azul con ligera transparencia */
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: 1px solid #ecf1f7;
+  outline: 2px solid white;
+  list-style: none;
+  z-index: 1000; /* Asegura que quede encima de otros elementos */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  
+  /* Efecto inicial oculto */
+  opacity: 0;/* Opacidad inicial */
+  transform: translateY(-10px);/* Desplazamiento hacia arriba */
+  transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;/* Transición suave */
+  pointer-events: none; /* Evita que el menú sea clickeable cuando está oculto */
+}
+
+/* Mostrar el menú al hacer hover */
+.navbar-profile:hover .nav-profile-dropdown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto; /* Permite la interacción */
+}
+
+/* Estilo de los elementos dentro del menú */
+.nav-profile-dropdown li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: white;
+  padding: 8px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 1s ease-in-out;
+}
+
+.nav-profile-dropdown li:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Flecha indicadora */
+.nav-profile-dropdown::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent rgba(87, 201, 233, 0.95) transparent;
+}
+
+@media (max-width:900px) {
+  .navbar .logo{
+    width: 120px;
+  }
+  .navbar-menu{
+    gap: 15px;
+    font-size: 16px;
+  }
+  .navbar-right{
+    gap: 20px;
+  }
+  .navbar-right img{
+    width: 20px;
+  }
+  .navbar-right button{
+    padding: 7px 20px;
+    font-size: 15px;
+  }
+}
+@media (max-width:750px) {
+  .navbar-menu{
+    display: none;
+  }
+}

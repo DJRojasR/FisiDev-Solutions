@@ -110,6 +110,10 @@ console.log("Respuesta del servidor:", response.data);
               <option value="Cocteles">Cocteles</option>
               <option value="Arroces">Arroces</option>
               <option value="Bebidas">Bebidas</option>
+              <option value="Estofados">Estofados</option>
+              <option value="Porciones">Porciones</option>
+              <option value="Postres">Postres</option>
+              
             </select>
           </div>
           <div className="add-price flex-col">
