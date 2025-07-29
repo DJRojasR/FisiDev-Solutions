@@ -23,6 +23,6 @@ const foodSchema = new mongoose.Schema({
   },
 });
 
-// creamos un modelo de comida o lo exportamos si ya existe
+// creamos un modelo de comida o se exporta si ya existe
 const foodModels = mongoose.models.food || mongoose.model("Food", foodSchema);
 export default foodModels;

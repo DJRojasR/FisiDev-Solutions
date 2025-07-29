@@ -29,7 +29,7 @@ const listFood = async (req, res) => {
   }
 };
 
-//remove food item
+//Remueve food item
 
 const removeFood = async (req, res) => {
   try {

@@ -35,7 +35,7 @@ const createToken = (id) => {
 
 
 
-// register user
+// Registrar usuarios
 const registerUser = async (req, res) => {
 	const { name, email, password } = req.body;
 	try {
